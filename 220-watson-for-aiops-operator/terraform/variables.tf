@@ -22,26 +22,26 @@ variable "gitops-cp-mq_catalog_namespace" {
   description = "The namespace where the catalog has been deployed"
   default = "openshift-marketplace"
 }
-variable "gitops-cp-queue-manager_qmgr_name" {
-  type = string
-  description = "Name of queue manager to be created"
-  default = "QM1"
-}
-variable "gitops-cp-queue-manager_qmgr_instance_name" {
-  type = string
-  description = "Name of MQ instance to be created"
-  default = "mq-instance"
-}
-variable "gitops-cp-queue-manager_cpulimits" {
-  type = string
-  description = "CPU limits for the queue manager instance"
-  default = "500m"
-}
-variable "gitops-cp-queue-manager_cpurequests" {
-  type = string
-  description = "CPU requests for the queue manager instance"
-  default = "500m"
-}
+# variable "gitops-cp-queue-manager_qmgr_name" {
+#   type = string
+#   description = "Name of queue manager to be created"
+#   default = "QM1"
+# }
+# variable "gitops-cp-queue-manager_qmgr_instance_name" {
+#   type = string
+#   description = "Name of MQ instance to be created"
+#   default = "mq-instance"
+# }
+# variable "gitops-cp-queue-manager_cpulimits" {
+#   type = string
+#   description = "CPU limits for the queue manager instance"
+#   default = "500m"
+# }
+# variable "gitops-cp-queue-manager_cpurequests" {
+#   type = string
+#   description = "CPU requests for the queue manager instance"
+#   default = "500m"
+# }
 variable "rwo_storage_class" {
   type = string
   description = "ReadWriteOnce access type Storage Class"
@@ -72,22 +72,22 @@ variable "gitea_namespace_argocd_namespace" {
   description = "The namespace where argocd has been deployed"
   default = "openshift-gitops"
 }
-variable "cp4i-mq_name" {
+variable "cp4waiops_name" {
   type = string
   description = "The value that should be used for the namespace"
-  default = "cp4i-mq"
+  default = "cp4waiops"
 }
 variable "cp4i-mq_ci" {
   type = bool
   description = "Flag indicating that this namespace will be used for development (e.g. configmaps and secrets)"
   default = false
 }
-variable "cp4i-mq_create_operator_group" {
+variable "cp4waiops_create_operator_group" {
   type = bool
   description = "Flag indicating that an operator group should be created in the namespace"
   default = true
 }
-variable "cp4i-mq_argocd_namespace" {
+variable "cp4waiops_argocd_namespace" {
   type = string
   description = "The namespace where argocd has been deployed"
   default = "openshift-gitops"
