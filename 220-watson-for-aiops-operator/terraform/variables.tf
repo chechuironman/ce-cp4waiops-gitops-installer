@@ -77,7 +77,7 @@ variable "cp4waiops_name" {
   description = "The value that should be used for the namespace"
   default = "cp4waiops"
 }
-variable "cp4i-mq_ci" {
+variable "cp4waiops_ci" {
   type = bool
   description = "Flag indicating that this namespace will be used for development (e.g. configmaps and secrets)"
   default = false

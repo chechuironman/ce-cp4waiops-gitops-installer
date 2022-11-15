@@ -16,7 +16,7 @@ module "cp4waiops" {
   source = "github.com/cloud-native-toolkit/terraform-gitops-namespace?ref=v1.11.2"
 
   argocd_namespace = var.cp4waiops_argocd_namespace
-  ci = var.cp4waiops_name
+  ci = var.cp4waiops_ci
   create_operator_group = var.cp4waiops_create_operator_group
   git_credentials = module.gitops_repo.git_credentials
   gitops_config = module.gitops_repo.gitops_config
