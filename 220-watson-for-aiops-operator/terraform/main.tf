@@ -111,18 +111,18 @@ module "gitops-cp-catalogs" {
 #   server_name = module.gitops_repo.server_name
 #   storageClass = var.rwo_storage_class
 # }
-# module "olm" {
-#   source = "github.com/cloud-native-toolkit/terraform-k8s-olm?ref=v1.3.2"
+module "olm" {
+  source = "github.com/cloud-native-toolkit/terraform-k8s-olm?ref=v1.3.2"
 
-#   cluster_config_file = module.cluster.config_file_path
-#   cluster_type = module.cluster.platform.type_code
-#   cluster_version = module.cluster.platform.version
-# }
-# module "sealed-secret-cert" {
-#   source = "github.com/cloud-native-toolkit/terraform-util-sealed-secret-cert?ref=v1.0.1"
+  cluster_config_file = module.cluster.config_file_path
+  cluster_type = module.cluster.platform.type_code
+  cluster_version = module.cluster.platform.version
+}
+module "sealed-secret-cert" {
+  source = "github.com/cloud-native-toolkit/terraform-util-sealed-secret-cert?ref=v1.0.1"
 
-#   cert = var.sealed-secret-cert_cert
-#   cert_file = var.sealed-secret-cert_cert_file
-#   private_key = var.sealed-secret-cert_private_key
-#   private_key_file = var.sealed-secret-cert_private_key_file
-# }
+  cert = var.sealed-secret-cert_cert
+  cert_file = var.sealed-secret-cert_cert_file
+  private_key = var.sealed-secret-cert_private_key
+  private_key_file = var.sealed-secret-cert_private_key_file
+}
