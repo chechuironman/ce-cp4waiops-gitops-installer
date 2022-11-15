@@ -12,12 +12,12 @@ variable "entitlement_key" {
   type = string
   description = "The entitlement key used to access the CP4I images in the container registry. Visit https://myibm.ibm.com/products-services/containerlibrary to get the key"
 }
-variable "gitops-cp-mq_namespace" {
+variable "gitops-cp-waiops_namespace" {
   type = string
   description = "The namespace where the application should be deployed"
   default = "openshift-operators"
 }
-variable "gitops-cp-mq_catalog_namespace" {
+variable "gitops-cp-waiops_catalog_namespace" {
   type = string
   description = "The namespace where the catalog has been deployed"
   default = "openshift-marketplace"

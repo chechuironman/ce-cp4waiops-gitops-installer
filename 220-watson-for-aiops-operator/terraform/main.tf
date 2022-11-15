@@ -81,17 +81,17 @@ module "gitops-cp-catalogs" {
   namespace = var.gitops-cp-catalogs_namespace
   server_name = module.gitops_repo.server_name
 }
-# module "gitops-cp-mq" {
-#   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-mq?ref=v1.1.6"
+module "gitops-cpwaiops" {
+  source = "github.com/chechuironman/terraform-gitops-cp-waiops-operator"
 
-#   catalog = module.gitops-cp-catalogs.catalog_ibmoperators
-#   catalog_namespace = var.gitops-cp-mq_catalog_namespace
-#   channel = module.cp4i-version-dependency.mq.channel
-#   git_credentials = module.gitops_repo.git_credentials
-#   gitops_config = module.gitops_repo.gitops_config
-#   namespace = var.gitops-cp-mq_namespace
-#   server_name = module.gitops_repo.server_name
-# }
+  catalog = module.gitops-cp-catalogs.catalog_ibmoperators
+  catalog_namespace = var.gitops-cp-waiops_catalog_namespace
+  # channel = module.cp4i-version-dependency.mq.channel
+  git_credentials = module.gitops_repo.git_credentials
+  gitops_config = module.gitops_repo.gitops_config
+  namespace = var.gitops-cp-waiops_namespace
+  server_name = module.gitops_repo.server_name
+}
 # module "gitops-cp-queue-manager" {
 #   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-queue-manager?ref=v1.0.6"
 
