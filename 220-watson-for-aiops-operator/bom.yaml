@@ -1,7 +1,7 @@
 apiVersion: cloud.ibm.com/v1alpha1
 kind: BillOfMaterial
 metadata:
-  name: 220-integration-mq
+  name: 220-WAIops-Orchestrator
   labels:
     type: software
     code: '220'
@@ -41,7 +41,7 @@ spec:
     #       value: oms-queue-config
     #     - name: storageClass
     #       alias: rwo_storage_class
-          scope: global
+          # scope: global
     - name: gitops-namespace
       alias: gitea_namespace
       version: v1.11.2
