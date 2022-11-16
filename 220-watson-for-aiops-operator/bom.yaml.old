@@ -1,59 +1,59 @@
 apiVersion: cloud.ibm.com/v1alpha1
 kind: BillOfMaterial
 metadata:
-  name: 230-integration-mq
+  name: 220-WAIops-Orchestrator
   labels:
     type: software
-    code: '230'
+    code: '220'
   annotations:
-    displayName: Integration - MQ
-    description: GitOps deployment of MQ for Cloud pak for Integration
+    displayName: WAIOPS - Orchestrator 
+    description: GitOps deployment of WAIops Orchestrator for Cloud pak for WAIops
     deployment-type/gitops: 'true'
 spec:
   modules:
-    - name: cp4i-dependency-management
-      alias: cp4i-version-dependency
-      version: v1.2.7
-      variables:
-        - name: cp4i_version
-          value: '2022_2_1'
-    - name: gitops-cp-catalogs
-      alias: gitops-cp-catalogs
-      version: v1.2.4
-      variables:
-        - name: entitlement_key
-          scope: global
-    - name: gitops-cp-mq
-      alias: gitops-cp-mq
-      version: v1.1.6
-    - name: gitops-cp-queue-manager
-      alias: gitops-cp-queue-manager
-      version: v1.0.6
-      dependencies:
-        - name: namespace
-          ref: cp4i-mq
-      variables:
-        - name: qmgr_name
-          value: QM1
-        - name: qmgr_instance_name
-          value: mq-instance
-        - name: config_map
-          value: oms-queue-config
-        - name: storageClass
-          alias: rwo_storage_class
-          scope: global
+    # - name: cp4waiops-dependency-management
+    #   alias: cp4i-version-dependency
+    #   version: v1.2.7
+    #   variables:
+    #     - name: cp4i_version
+    #       value: '2022_2_1'
+    # - name: gitops-cp-catalogs
+    #   alias: gitops-cp-catalogs
+    #   version: v1.2.4
+    #   variables:
+    #     - name: entitlement_key
+    #       scope: global
+    # - name: gitops-cp-mq
+    #   alias: gitops-cp-mq
+    #   version: v1.1.6
+    # - name: gitops-cp-queue-manager
+    #   alias: gitops-cp-queue-manager
+    #   version: v1.0.6
+    #   dependencies:
+    #     - name: namespace
+    #       ref: cp4i-mq
+    #   variables:
+    #     - name: qmgr_name
+    #       value: QM1
+    #     - name: qmgr_instance_name
+    #       value: mq-instance
+    #     - name: config_map
+    #       value: oms-queue-config
+    #     - name: storageClass
+    #       alias: rwo_storage_class
+          # scope: global
     - name: gitops-namespace
       alias: gitea_namespace
       version: v1.11.2
       variables: &ref_0
         - name: name
           value: gitea
-    - name: gitops-namespace
-      alias: cp4i-mq
-      version: v1.11.2
-      variables:
-        - name: name
-          value: cp4i-mq
+    # - name: gitops-namespace
+    #   alias: cp4i-mq
+    #   version: v1.11.2
+    #   variables:
+    #     - name: name
+    #       value: cp4i-mq
     - name: gitops-repo
       alias: gitops_repo
       version: v1.21.0
