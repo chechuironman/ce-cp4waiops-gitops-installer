@@ -12,17 +12,17 @@ module "cluster" {
   skip = var.cluster_skip
   tls_secret_name = var.cluster_tls_secret_name
 }
-# module "cp4i-mq" {
-#   source = "github.com/cloud-native-toolkit/terraform-gitops-namespace?ref=v1.11.2"
+module "cp4waiops" {
+  source = "github.com/cloud-native-toolkit/terraform-gitops-namespace?ref=v1.11.2"
 
-#   argocd_namespace = var.cp4i-mq_argocd_namespace
-#   ci = var.cp4i-mq_ci
-#   create_operator_group = var.cp4i-mq_create_operator_group
-#   git_credentials = module.gitops_repo.git_credentials
-#   gitops_config = module.gitops_repo.gitops_config
-#   name = var.cp4i-mq_name
-#   server_name = module.gitops_repo.server_name
-# }
+  argocd_namespace = var.cp4waiops_argocd_namespace
+  ci = var.cp4waiops_ci
+  create_operator_group = var.cp4waiops_create_operator_group
+  git_credentials = module.gitops_repo.git_credentials
+  gitops_config = module.gitops_repo.gitops_config
+  name = var.cp4waiops_name
+  server_name = module.gitops_repo.server_name
+}
 # module "cp4i-version-dependency" {
 #   source = "github.com/cloud-native-toolkit/terraform-cp4i-dependency-management?ref=v1.2.7"
 

@@ -72,22 +72,22 @@ variable "gitea_namespace_argocd_namespace" {
   description = "The namespace where argocd has been deployed"
   default = "openshift-gitops"
 }
-variable "cp4i-mq_name" {
+variable "cp4waiops_name" {
   type = string
   description = "The value that should be used for the namespace"
-  default = "cp4i-mq"
+  default = "cp4waiops"
 }
-variable "cp4i-mq_ci" {
+variable "cp4waiops_ci" {
   type = bool
   description = "Flag indicating that this namespace will be used for development (e.g. configmaps and secrets)"
   default = false
 }
-variable "cp4i-mq_create_operator_group" {
+variable "cp4waiops_create_operator_group" {
   type = bool
   description = "Flag indicating that an operator group should be created in the namespace"
   default = true
 }
-variable "cp4i-mq_argocd_namespace" {
+variable "cp4waiops_argocd_namespace" {
   type = string
   description = "The namespace where argocd has been deployed"
   default = "openshift-gitops"
