@@ -244,3 +244,20 @@ variable "sealed-secret-cert_private_key_file" {
   description = "The file containin the private key that will be used to encrypt the sealed secrets. If not provided a new private key will be generated"
   default = ""
 }
+
+variable "gitops-cp-waiops_namespace" {
+  type = string
+  description = "The namespace where the application should be deployed"
+  default = "openshift-operators"
+}
+variable "gitops-cp-waiops_catalog_namespace" {
+  type = string
+  description = "The namespace where the catalog has been deployed"
+  default = "openshift-marketplace"
+}
+
+variable "gitops-cp-waiops_namespace" {
+  type = string
+  description = "The namespace where the application should be deployed"
+  default = "openshift-operators"
+}

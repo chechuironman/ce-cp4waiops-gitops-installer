@@ -23,9 +23,9 @@ spec:
       variables:
         - name: entitlement_key
           scope: global
-    - name: gitops-cp-mq
-      alias: gitops-cp-mq
-      version: v1.1.6
+    - name: gitops-cp-waiops
+      alias: gitops-cp-waiops
+      version: v1.0.0
     - name: gitops-cp-queue-manager
       alias: gitops-cp-queue-manager
       version: v1.0.6
