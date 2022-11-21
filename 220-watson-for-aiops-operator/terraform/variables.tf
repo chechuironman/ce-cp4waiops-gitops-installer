@@ -255,9 +255,3 @@ variable "gitops-cp-waiops_catalog_namespace" {
   description = "The namespace where the catalog has been deployed"
   default = "openshift-marketplace"
 }
-
-variable "gitops-cp-waiops_namespace" {
-  type = string
-  description = "The namespace where the application should be deployed"
-  default = "openshift-operators"
-}
