@@ -23,11 +23,6 @@ module "cp4waiops" {
   name = var.cp4waiops_name
   server_name = module.gitops_repo.server_name
 }
-# module "cp4i-version-dependency" {
-#   source = "github.com/cloud-native-toolkit/terraform-cp4i-dependency-management?ref=v1.2.7"
-
-#   cp4i_version = var.cp4i-version-dependency_cp4i_version
-# }
 module "gitea" {
   source = "github.com/cloud-native-toolkit/terraform-tools-gitea?ref=v0.5.0"
 
@@ -81,9 +76,8 @@ module "gitops-cp-catalogs" {
   namespace = var.gitops-cp-catalogs_namespace
   server_name = module.gitops_repo.server_name
 }
-
 module "gitops-cp-waiops" {
-  source = "github.com/chechuironman/terraform-gitops-cp-waiops-operator?ref=v1.0.0"
+  source = "github.com/chechuironman/terraform-gitops-cp-waiops?ref=v1.0.0"
 
   catalog = module.gitops-cp-catalogs.catalog_ibmoperators
   catalog_namespace = var.gitops-cp-waiops_catalog_namespace
@@ -93,37 +87,6 @@ module "gitops-cp-waiops" {
   namespace = var.gitops-cp-waiops_namespace
   server_name = module.gitops_repo.server_name
 }
-
-# module "gitops-cp-mq" {
-#   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-mq?ref=v1.1.6"
-
-#   catalog = module.gitops-cp-catalogs.catalog_ibmoperators
-#   catalog_namespace = var.gitops-cp-mq_catalog_namespace
-#   channel = module.cp4i-version-dependency.mq.channel
-#   git_credentials = module.gitops_repo.git_credentials
-#   gitops_config = module.gitops_repo.gitops_config
-#   namespace = var.gitops-cp-mq_namespace
-#   server_name = module.gitops_repo.server_name
-# }
-# module "gitops-cp-queue-manager" {
-#   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-queue-manager?ref=v1.0.6"
-
-#   config_map = var.gitops-cp-queue-manager_config_map
-#   cpulimits = var.gitops-cp-queue-manager_cpulimits
-#   cpurequests = var.gitops-cp-queue-manager_cpurequests
-#   entitlement_key = module.gitops-cp-catalogs.entitlement_key
-#   git_credentials = module.gitops_repo.git_credentials
-#   gitops_config = module.gitops_repo.gitops_config
-#   kubeseal_cert = module.gitops_repo.sealed_secrets_cert
-#   license = module.cp4i-version-dependency.mq.license
-#   license_use = module.cp4i-version-dependency.mq.license_use
-#   mq_version = module.cp4i-version-dependency.mq.version
-#   namespace = module.cp4i-mq.name
-#   qmgr_instance_name = var.gitops-cp-queue-manager_qmgr_instance_name
-#   qmgr_name = var.gitops-cp-queue-manager_qmgr_name
-#   server_name = module.gitops_repo.server_name
-#   storageClass = var.rwo_storage_class
-# }
 module "olm" {
   source = "github.com/cloud-native-toolkit/terraform-k8s-olm?ref=v1.3.2"
 
