@@ -77,7 +77,7 @@ module "gitops-cp-catalogs" {
   server_name = module.gitops_repo.server_name
 }
 module "gitops-cp-waiops" {
-  source = "https://github.com/cloud-native-toolkit/terraform-gitops-waiops?ref=v0.1.0"
+  source = "github.com/cloud-native-toolkit/terraform-gitops-waiops?ref=v0.1.0"
 
   catalog = module.gitops-cp-catalogs.catalog_ibmoperators
   catalog_namespace = var.gitops-cp-waiops_catalog_namespace
